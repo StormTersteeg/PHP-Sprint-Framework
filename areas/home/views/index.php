@@ -1,3 +1,4 @@
+<title>Home</title>
 <div style="display:flex;justify-content:center;align-items:center;height:100%;">
     <div class="card">
         <div class="card-body">
