@@ -1,5 +1,8 @@
 <?php
 
+// SETTINGS
+$use_resource_stacking = TRUE;
+
 // COLLECT PARAMETERS
 if (isset($_GET['page'])) { $page = $_GET['page']; } else { header("Refresh: 0; url=home"); exit; }
 if (isset($_GET['param'])) { $param = $_GET['param']; }
