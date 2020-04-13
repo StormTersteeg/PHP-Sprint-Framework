@@ -2,7 +2,6 @@
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 
-// Production Variables
 if(!defined('DB_SERVER')) {
     define('DB_SERVER', 'localhost');
 }
@@ -13,7 +12,7 @@ if(!defined('DB_PASSWORD')) {
     define('DB_PASSWORD', '');
 }
 if(!defined('DB_NAME')) {
-    define('DB_NAME', 'examen');
+    define('DB_NAME', '');
 }
 
 /* Attempt to connect to MySQL database */
