@@ -3,6 +3,15 @@
 // SETTINGS
 include("sprint/settings.php");
 
+// COLLECT PARAMETERS
+if (isset($_GET['page'])) { $page = $_GET['page']; } else { header("Refresh: 0; url={$default_area}"); exit; }
+if (isset($_GET['param'])) { $param = $_GET['param']; }
+
+// OPEN DOCUMENT
+echo '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+<!--SPRINT3 DAEMONITE-MATERIAL-->';
+
 // FORCE HTTPS
 if ($use_forced_https) {
     echo '
@@ -16,18 +25,6 @@ if ($use_forced_https) {
 
 // INCLUDE INTERNAL FUNCTIONS
 include("sprint/functions.php");
-
-// COLLECT PARAMETERS
-if (isset($_GET['page'])) { $page = $_GET['page']; } else { header("Refresh: 0; url={$default_area}"); exit; }
-if (isset($_GET['param'])) { $param = $_GET['param']; }
-
-// OPEN DOCUMENT
-echo '
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-<!--SPRINT3 DAEMONITE-MATERIAL-->
-';
-
 include("sprint/styles.php");
 
 // INCLUDE PARTIALS
