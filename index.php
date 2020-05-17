@@ -1,8 +1,20 @@
-<?php
+<?php session_start();
 
 // SETTINGS
-$default_area = "home";
-$use_resource_stacking = TRUE;
+include("sprint/settings.php");
+
+// FORCE HTTPS
+if ($use_forced_https) {
+    echo '
+        <script>
+            if (location.protocol !== "https:") {
+                location.replace(`https:${location.href.substring(location.protocol.length)}`);
+            }
+        </script>
+    ';
+}
+
+// INCLUDE INTERNAL FUNCTIONS
 include("sprint/functions.php");
 
 // COLLECT PARAMETERS
@@ -19,7 +31,15 @@ echo '
 include("sprint/styles.php");
 
 // INCLUDE PARTIALS
-// if ($page!="home") { include("sprint/partials/navbar.php"); }
+if ($page=='home') {
+    // include("sprint/partials/navbar.php");
+} else if ($page=='admin') {
+    if (isset($_SESSION["loggedin"])) {
+        // include("sprint/partials/admin_navbar.php");
+    } else {
+        // $page = '404';
+    }
+}
 
 // SERVE VIEW
 if (isset($page) & file_exists("areas/" . $page . "/views/index.php"))
