@@ -1,4 +1,5 @@
 <?php
+include("sprint/settings.php");
 
 if ($use_production_db) {
     if(!defined('DB_SERVER')) {
@@ -31,6 +32,6 @@ if ($use_production_db) {
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+  die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 ?>
