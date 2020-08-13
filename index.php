@@ -12,7 +12,7 @@ $serve_content = (!in_array($page, $content_blacklist)) ? true : false;
 if ($serve_content)
 {
   // FORCE HTTPS
-  if(isset($_SERVER['HTTPS']) && $use_forced_https) {
+  if(!isset($_SERVER['HTTPS']) && $use_forced_https) {
     echo '
       <script>
         location.replace(`https:${location.href.substring(location.protocol.length)}`);
