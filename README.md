@@ -174,7 +174,6 @@ Sprint does not require a database to function, but it does contain a set of use
 In general, I like to use a single controller to which I do all my posts. Sprint includes this controller and you can delete it if you want to, it's not a requirement.
 
 In `areas/controller/functions.php` you can find SQL query examples and in `areas/index/views/index.php` you can find an example on how to retrieve data from the controller using Jquery.
-
 <br />
 
 ## License
