@@ -12,10 +12,12 @@ $serve_content = (!in_array($page, $content_blacklist)) ? true : false;
 if ($serve_content)
 {
   // FORCE HTTPS
-  if(!isset($_SERVER['HTTPS']) && $use_forced_https) {
+  if($use_forced_https) {
     echo '
       <script>
+      if (location.protocol !== "https:") {
         location.replace(`https:${location.href.substring(location.protocol.length)}`);
+      }
       </script>
     ';
   }
@@ -23,7 +25,8 @@ if ($serve_content)
   // OPEN DOCUMENT
   echo '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
   <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-  <!-- SPRINT3.2 --><link rel="apple-touch-icon" href="assets/logo.png">';
+  <!-- SPRINT3.2 -->
+  <link rel="apple-touch-icon" href="assets/logo.png">';
 
   // INCLUDE STYLESHEETS
   include("sprint/styles.php");
