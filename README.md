@@ -185,6 +185,7 @@ In `areas/controller/functions.php` you can find SQL query examples and in `area
 
 ## Icons
 In assets you can find two images called `favicon.png` and `logo.png`. `favicon.png` will be used as the favicon of your project, and `logo.png` will be used when a user creates a shortcut to your project on a mobile device.
+<br /><br />
 
 
 ## License
