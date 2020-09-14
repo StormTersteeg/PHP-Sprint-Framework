@@ -23,6 +23,7 @@
   * $use_forced_https
   * $use_production_db
 * [Database / Controller](#database-and-controller)
+* [Icons](#icons)
 * [License](#license)
 <br />
 
