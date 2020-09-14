@@ -92,11 +92,11 @@ The `areas` directory contains all your pages, each directory resembles a page. 
 
 This new page is now accessible as `localhost/my_project/my_page`.
 (or as `localhost/my_page` if you're using your entire htdocs as the project root)
-<br />
+<br /><br />
 
 **Removing stock areas**<br />
 In the `areas` folder you will find the `controller` and `index` area, you can remove them. The `controller` and `index` area only function as examples. The `404` area will be displayed when an unknown area is being called by a user, you can modify it to your liking.
-<br />
+<br /><br />
 
 **Stock area behavior**<br />
 By default, two area names have special characteristics, these areas are `index` and `controller`. The index area functions as the index of your project, this means that it's accessible at `localhost/my_project/index` but also at `localhost/my_project`.
