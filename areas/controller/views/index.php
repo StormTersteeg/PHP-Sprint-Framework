@@ -6,9 +6,9 @@ if (isset($_POST['request'])) {$request = $_POST['request'];} else {echo "ERROR:
 
 switch ($request) {
   // TEST CASE
-  case "test":
-    $value = $_POST['value'];
-    echo "value: " . $value . "<br>Controller works properly.";
+  case "getTest":
+    // fakeFunction() can be found in areas/controller/functions.php
+    fakeFunction();
     break;
 
   // SQL EXAMPLE CASES

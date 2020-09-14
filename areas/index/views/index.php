@@ -11,14 +11,16 @@
 
     <div class="card ml-5">
         <div class="card-body">
-            <h5 class="mb-0">Try the default controller by posting this form.</h5>
-            <form action="controller" method="post">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="value" placeholder="write anything">
-                    <input type="hidden" class="form-control" name="request" value="test">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <h5>Try the default controller by posting this form.</h5>
+            <button type="submit" class="btn btn-primary" onclick="getTest()">Submit</button>
         </div>
     </div>
 </div>
+
+<script>
+function getTest() {
+  re = $.post("controller", {request: "getTest"}, function (result) {
+    alert(result)
+  })
+}
+</script>
