@@ -7,7 +7,7 @@ include("sprint/core/functions.php");
 // COLLECT PARAMETERS
 $page = (isset($_GET['page'])) ? $_GET['page'] : "index";
 $param = (isset($_GET['param'])) ? $_GET['param'] : false;
-$serve_content = (!in_array($page, $content_blacklist)) ? true : false;
+$serve_content = (!in_array($page, $resource_blacklist)) ? true : false;
 
 if ($serve_content)
 {
