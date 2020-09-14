@@ -143,7 +143,7 @@ Resource stacking can only be used when all your preload and afterload files are
 This value contains a list of pages on which you **don't** want to load any of the resources declared in `resource-preload.php` and `resource-afterload.php`. Imagine you have a PHP controller area that is only being posted to, adding this area to the resource_blacklist will be beneficial since the controller doesn't require any of the stylesheets or scripts.
 
 The resource_blacklist is also useful if you have a specific page that doesn't require any of the stylesheets or scripts.
-<br />
+<br /><br />
 
 **$use_resource_stacking**<br />
 > Type: Bool
@@ -153,14 +153,14 @@ Resource stacking is a sprint feature that compiles all your resources together 
 
 **WARNING**
 Resource stacking can only be used when all your preload and afterload files are stored locally.
-<br />
+<br /><br />
 
 **$use_forced_https**<br />
 > Type: Bool
 > Default value: FALSE
 
 Bool used to force users to use HTTPS.
-<br />
+<br /><br />
 
 **$use_production_db**<br />
 > Type: Bool
