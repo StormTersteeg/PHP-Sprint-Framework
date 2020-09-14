@@ -66,6 +66,7 @@ Sprint is packaged with a few resources that I consider to be useful. These reso
 <br />
 
 
+<br />
 ## Getting Started
 
 To start, clone the project. Now give the folder a unique name, I'm going to be using `my_project` for example. Remove any unwanted files like `.git` and `README.md`.
@@ -81,6 +82,7 @@ There are no installation steps, sprint configuration is purely file based.
 <br />
 
 
+<br />
 ## Creating pages
 
 **Adding a page**<br />
@@ -100,6 +102,7 @@ In the `areas` folder you will find the `controller` and `index` area, you can r
 By default, two area names have special characteristics, these areas are `index` and `controller`. The index area functions as the index of your project, this means that it's accessible at `localhost/my_project/index` but also at `localhost/my_project`.
 <br />
 
+<br />
 ## Resources
 
 In `assets/resources` you will find a `custom` directory which contains an empty stylesheet and script file, which have already been added to the resource system. This means they will be included on every page except for pages that have been added to the `resource-blacklist`. More about the `resource-blacklist` [here](#resource-blacklist).
@@ -130,6 +133,7 @@ Resource stacking is a sprint feature that compiles all your resources together 
 Resource stacking can only be used when all your preload and afterload files are stored locally.
 <br />
 
+<br />
 ## Settings
 
 **$resource_blacklist**<br />
@@ -168,6 +172,7 @@ This can be useful if there are differences between your local and your producti
 <br />
 
 
+<br />
 ## Database and Controller
 Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between two sets of database credentials by toggling `$use_production_db` (in `sprint/settings.php`) and configuring `sprint/config.php`.
 
@@ -176,6 +181,7 @@ In general, I like to use a single controller to which I do all my posts. Sprint
 In `areas/controller/functions.php` you can find SQL query examples and in `areas/index/views/index.php` you can find an example on how to retrieve data from the controller using Jquery.
 <br />
 
+<br />
 ## License
 
 MIT License
