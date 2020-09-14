@@ -5,14 +5,24 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Features](#features)
-  * [Default resources](#default-resources)
+  * Features
+  * Default resources
 * [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
+  * Prerequisites
 * [Creating pages](#creating-pages)
   * Adding a page
   * Removing stock areas
   * Stock area behavior
+* [Resources (stylesheets and scripts)](#resources)
+  * Preload & Afterload
+  * Adding resources
+  * Resource stacking
+* [Settings](#settings)
+  * $resource_blacklist
+  * $use_resource_stacking
+  * $use_forced_https
+  * $use_production_db
+* [Database / Controller](#database-and-controller)
 * [License](#license)
 
 
@@ -58,9 +68,9 @@ Sprint is packaged with a few resources that I consider to be useful. These reso
 
 ## Getting Started
 
-To start, clone the project. Now give the folder a unique name, I'm going to be using `my_project` for example.
+To start, clone the project. Now give the folder a unique name, I'm going to be using `my_project` for example. Remove any unwanted files like `.git` and `README.md`.
 
-It is possible to add any resource to this project if you want to, I will explain this in the **resources** section.
+It is possible to add any resource to this project if you want to, I will explain this in the [resources](#resources) section.
 (For example charts.js or any front-end library)
 
 ### Prerequisites
@@ -73,7 +83,7 @@ There are no installation steps, sprint configuration is purely file based.
 
 ## Creating pages
 
-**Adding a page**
+**Adding a page**<br />
 The `areas` directory contains all your pages, each directory resembles a page. To create a new `/page`, create a directory in `areas`. Within this directory add another directory called `views`. Add an index.php file to this directory. You should end up with the following path:
 
 > areas/my_page/views/index.php
@@ -82,16 +92,90 @@ This new page is now accessible as `localhost/my_project/my_page`.
 (or as `localhost/my_page` if you're using your entire htdocs as the project root)
 <br />
 
-**Removing stock areas**
+**Removing stock areas**<br />
 In the `areas` folder you will find the `controller` and `index` area, you can remove them. The `controller` and `index` area only function as examples. The `404` area will be displayed when an unknown area is being called by a user, you can modify it to your liking.
 <br />
 
-**Stock area behavior**
+**Stock area behavior**<br />
 By default, two area names have special characteristics, these areas are `index` and `controller`. The index area functions as the index of your project, this means that it's accessible at `localhost/my_project/index` but also at `localhost/my_project`.
 <br />
 
 ## Resources
 
+In `assets/resources` you will find a `custom` directory which contains an empty stylesheet and script file, which have already been added to the resource system. This means they will be included on every page except for pages that have been added to the `resource-blacklist`. More about the `resource-blacklist` [here](#resource-blacklist).
+
+To use custom stylesheets and script files, I would very much recommend you to use the `preload` and `afterload` system (instead of directly linking to them within your html).
+<br />
+
+**Preload & Afterload**<br />
+In the `sprint` directory you will find `resource-preload.php` and `resource-afterload.php`. In these files you can declare two types of resources:
+
+ 1. Resources that should be loaded before the first contentful paint - `resource-preload.php`
+ 2. Resources that should be loaded at the end of the body - `resource-afterload.php`
+
+Generally speaking, you want to add your stylesheets to preload and your scripts to afterload. Using this system will improve your user experience because big scripting files are being loaded after the content is displayed.
+<br />
+
+**Adding resources**<br />
+As an example, add the following line to your `resource-preload.php` to add a new resource (in this case "zebra.css"):
+> inc("assets/resources/zebra/zebra.css");
+
+The inc() function recognizes different types of files and it will generate the right type of \<link> accordingly.
+<br />
+
+**Resource stacking**<br />
+Resource stacking is a sprint feature that compiles all your resources together with your html, to lower the amount of requests made. This feature generally improves load times. The idea is that making one big request is better than making tons of small requests. It can be enabled/disabled in `sprint/settings.php`.
+
+**WARNING**
+Resource stacking can only be used when all your preload and afterload files are stored locally.
+<br />
+
+## Settings
+
+**$resource_blacklist**<br />
+> Type: Array
+> Default value: ["controller"]
+
+This value contains a list of pages on which you **don't** want to load any of the resources declared in `resource-preload.php` and `resource-afterload.php`. Imagine you have a PHP controller area that is only being posted to, adding this area to the resource_blacklist will be beneficial since the controller doesn't require any of the stylesheets or scripts.
+
+The resource_blacklist is also useful if you have a specific page that doesn't require any of the stylesheets or scripts.
+<br />
+
+**$use_resource_stacking**<br />
+> Type: Bool
+> Default value: TRUE
+
+Resource stacking is a sprint feature that compiles all your resources together with your html, to lower the amount of requests being made. This feature generally improves load times. The idea is that making one big request is better than making tons of small requests. It can be enabled or disabled.
+
+**WARNING**
+Resource stacking can only be used when all your preload and afterload files are stored locally.
+<br />
+
+**$use_forced_https**<br />
+> Type: Bool
+> Default value: FALSE
+
+Bool used to force users to use HTTPS.
+<br />
+
+**$use_production_db**<br />
+> Type: Bool
+> Default value: FALSE
+
+Setting used to switch between databases. In `sprint/config.php` there are two sets of database credentials which can be defined in case your website requires a database. This boolean allows you to quickly switch between the two sets of credentials.
+
+This can be useful if there are differences between your local and your production database.
+<br />
+
+
+## Database and Controller
+Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between two sets of database credentials by toggling `$use_production_db` (in `sprint/settings.php`) and configuring `sprint/config.php`.
+
+In general, I like to use a single controller to which I do all my posts. Sprint includes this controller and you can delete it if you want to, it's not a requirement.
+
+In `areas/controller/functions.php` you can find SQL query examples and in `areas/index/views/index.php` you can find an example on how to retrieve data from the controller using Jquery.
+
+<br />
 
 ## License
 
