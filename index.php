@@ -28,8 +28,8 @@ if ($serve_content)
   <!-- SPRINT3.2 -->
   <link rel="apple-touch-icon" href="assets/logo.png">';
 
-  // INCLUDE STYLESHEETS
-  include("sprint/styles.php");
+  // INCLUDE PRELOAD
+  include("sprint/resource-preload.php");
 
   // INCLUDE PARTIALS
   if ($page=='home') {
@@ -59,9 +59,9 @@ else
 
 if ($serve_content)
 {
-  // INCLUDE SCRIPTS
+  // INCLUDE AFTERLOAD
   echo "<project-scripts>";
-  include("sprint/scripts.php");
+  include("sprint/resource-afterload.php");
   echo "</project-scripts>";
 
   // ADD PRODUCT ICON
