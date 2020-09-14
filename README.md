@@ -1,115 +1,96 @@
 ## SPRINT-V3
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
+<img src="https://one.dontdalon.com/assets/img/sprint_banner.png">
 
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Best-README-Template</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</p>
-
-
-
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#default-resources)
+  * [Features](#features)
+  * [Default resources](#default-resources)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
+* [Creating pages](#creating-pages)
+  * Adding a page
+  * Removing stock areas
+  * Stock area behavior
 * [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
 
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Sprint is a project I made to be able to pass my web development exams without having to depend on any frameworks. What exactly is Sprint? Calling Sprint a framework would be a bit of an overstatement. It's a project template containing a handful of useful features, which allows any programmer to deploy a website or webapp without hassle.
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
+Why use Sprint when there are a lot of great frameworks that contain a lot of features? Sprint doesn't do a lot of things, unlike wordpress or laravel for example. But it's very quick and it's easy to modify. Using a framework like wordpress to create a website always makes me feel like I'm using sledgehammer to crack a nut.
+<br />
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
+### Features
+In short? Pretty urls, forced https, MVC layout, dual database, resource control, resource piling and more.
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+**A little more in depth:**
+* Easy to use pretty url system
+	* `/about` instead of `/about.html`
+* Premade MVC folder layout
+* Forced `HTTPS` setting
+* Simple dual database setting
+	* To easily switch between production and deployment databases
+* Resource spreading feature
+	* Want to load a certain script at the end of the body on every page? easy.
+* Request limiting feature
+	* Compiles all your resources upon requests
+* Resource free pages
+	* Have a controller page on which you don't want to load any resources? add it to the content-blocklist
+<br />
+
 
 ### Default resources
-These resources are recommendations, and I often use them myself, they are not requirements.
+
+Sprint is packaged with a few resources that I consider to be useful. These resources are recommendations, and I often use them myself, they are not requirements. 
+
 * [Daemonite Material Design 4.1.1] (http://daemonite.github.io/material/docs/4.1/getting-started/introduction/)
 * [Google Material Icons V48] (https://material.io/resources/icons/?style=baseline)
 * [Jquery 3.4.1] (https://api.jquery.com/)
 * [Bootstrap JS 4.1.1] (https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 * [Popper 1.14.3] (https://popper.js.org/docs/v1/)
 * [Roboto Font] (https://fonts.google.com/specimen/Roboto)
+<br />
 
 
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To start, clone the project. Now give the folder a unique name, I'm going to be using `my_project` for example.
+
+It is possible to add any resource to this project if you want to, I will explain this in the **resources** section.
+(For example charts.js or any front-end library)
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+To work with Sprint you need a webserver and a PHP environment. I recommend XAMPP. Make sure your sprint project is inside of a webserver directory (like htdocs).
 
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-3. Install NPM packages
-```sh
-npm install
-```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
+There are no installation steps, sprint configuration is purely file based.
+<br />
 
 
+## Creating pages
 
-<!-- USAGE EXAMPLES -->
-## Usage
+**Adding a page**
+The `areas` directory contains all your pages, each directory resembles a page. To create a new `/page`, create a directory in `areas`. Within this directory add another directory called `views`. Add an index.php file to this directory. You should end up with the following path:
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+> areas/my_page/views/index.php
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+This new page is now accessible as `localhost/my_project/my_page`.
+(or as `localhost/my_page` if you're using your entire htdocs as the project root)
+<br />
 
+**Removing stock areas**
+In the `areas` folder you will find the `controller` and `index` area, you can remove them. The `controller` and `index` area only function as examples. The `404` area will be displayed when an unknown area is being called by a user, you can modify it to your liking.
+<br />
+
+**Stock area behavior**
+By default, two area names have special characteristics, these areas are `index` and `controller`. The index area functions as the index of your project, this means that it's accessible at `localhost/my_project/index` but also at `localhost/my_project`.
+<br />
+
+## Resources
 
 
 ## License
