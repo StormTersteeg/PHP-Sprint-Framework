@@ -138,7 +138,7 @@ Resource stacking can only be used when all your preload and afterload files are
 ## Settings
 
 **$resource_blacklist**<br />
-> Type: Array
+> Type: Array<br />
 > Default value: ["controller"]
 
 This value contains a list of pages on which you **don't** want to load any of the resources declared in `resource-preload.php` and `resource-afterload.php`. Imagine you have a PHP controller area that is only being posted to, adding this area to the resource_blacklist will be beneficial since the controller doesn't require any of the stylesheets or scripts.
@@ -147,7 +147,7 @@ The resource_blacklist is also useful if you have a specific page that doesn't r
 <br /><br />
 
 **$use_resource_stacking**<br />
-> Type: Bool
+> Type: Bool<br />
 > Default value: TRUE
 
 Resource stacking is a sprint feature that compiles all your resources together with your html, to lower the amount of requests being made. This feature generally improves load times. The idea is that making one big request is better than making tons of small requests. It can be enabled or disabled.
@@ -157,14 +157,14 @@ Resource stacking can only be used when all your preload and afterload files are
 <br /><br />
 
 **$use_forced_https**<br />
-> Type: Bool
+> Type: Bool<br />
 > Default value: FALSE
 
 Bool used to force users to use HTTPS.
 <br /><br />
 
 **$use_production_db**<br />
-> Type: Bool
+> Type: Bool<br />
 > Default value: FALSE
 
 Setting used to switch between databases. In `sprint/config.php` there are two sets of database credentials which can be defined in case your website requires a database. This boolean allows you to quickly switch between the two sets of credentials.
