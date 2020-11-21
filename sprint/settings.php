@@ -1,6 +1,12 @@
 <?php
+// App settings
 $resource_blacklist = ["controller"];
 $use_resource_stacking = TRUE;
 $use_forced_https = FALSE;
-$use_production_db = FALSE;
-?>
+
+// Database settings
+$database_model = 'local';
+$database_credentials = array(
+  'local' => array('localhost', 'root', ''),
+  'production' => array('localhost', 'root', '')
+);

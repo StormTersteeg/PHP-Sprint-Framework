@@ -2,6 +2,7 @@
 
 // SETTINGS & FUNCTIONS
 include("sprint/settings.php");
+include("sprint/core/classes.php");
 include("sprint/core/functions.php");
 
 // COLLECT PARAMETERS

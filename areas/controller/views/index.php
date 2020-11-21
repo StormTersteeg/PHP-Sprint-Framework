@@ -1,5 +1,4 @@
 <?php
-include("sprint/core/db_config.php");
 include("areas/controller/functions.php");
 
 if (isset($_POST['request'])) {$request = $_POST['request'];} else {echo "ERROR: No request defined"; exit();}
