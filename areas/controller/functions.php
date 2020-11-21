@@ -1,14 +1,5 @@
 <?php
-include("sprint/config.php");
-
-/*
-These example queries assume the existance of a database containing the following table:
-
-TABLE: notes
-STRUCTURE:
-- VARCHAR: note_name
-- VARCHAR: note_content
-*/
+include("sprint/db_config.php");
 
 function fakeFunction() {
   echo "Controller configured properly, this text can be found in areas/controller/views/index.php on line 10";
