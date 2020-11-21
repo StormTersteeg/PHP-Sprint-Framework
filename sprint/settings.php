@@ -1,5 +1,6 @@
 <?php
 // App settings
+$execution_mode = 'strict'; // quiet - oblivious - strict
 $resource_blacklist = ["controller"];
 $use_resource_stacking = TRUE;
 $use_forced_https = FALSE;
