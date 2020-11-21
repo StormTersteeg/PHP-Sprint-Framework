@@ -1,5 +1,5 @@
 <?php
-include("sprint/db_config.php");
+include("sprint/core/db_config.php");
 
 function fakeFunction() {
   echo "Controller configured properly, this text can be found in areas/controller/views/index.php on line 10";

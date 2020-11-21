@@ -167,7 +167,7 @@ Bool used to force users to use HTTPS.
 > Type: Bool<br />
 > Default value: FALSE
 
-Setting used to switch between databases. In `sprint/db_config.php` there are two sets of database credentials which can be defined in case your website requires a database. This boolean allows you to quickly switch between the two sets of credentials.
+Setting used to switch between databases. In `sprint/core/db_config.php` there are two sets of database credentials which can be defined in case your website requires a database. This boolean allows you to quickly switch between the two sets of credentials.
 
 This can be useful if there are differences between your local and your production database.
 <br /><br />
@@ -175,7 +175,7 @@ This can be useful if there are differences between your local and your producti
 
 
 ## Database and Controller
-Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between two sets of database credentials by toggling `$use_production_db` (in `sprint/settings.php`) and configuring `sprint/db_config.php`.
+Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between two sets of database credentials by toggling `$use_production_db` (in `sprint/settings.php`) and configuring `sprint/core/db_config.php`.
 
 In general, I like to use a single controller to which I do all my posts. Sprint includes this controller and you can delete it if you want to, it's not a requirement.
 
