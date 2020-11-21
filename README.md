@@ -122,9 +122,9 @@ Generally speaking, you want to add your stylesheets to preload and your scripts
 
 **Adding resources**<br />
 As an example, add the following line to your `resource-preload.php` to add a new resource (in this case "zebra.css"):
-> inc("assets/resources/zebra/zebra.css");
+> import("assets/resources/zebra/zebra.css");
 
-The inc() function recognizes different types of files and it will generate the right type of \<link> accordingly.
+The import() function recognizes different types of files and it will generate the right type of \<link> accordingly.
 <br />
 
 **Resource stacking**<br />
@@ -167,7 +167,7 @@ Bool used to force users to use HTTPS.
 > Type: Bool<br />
 > Default value: FALSE
 
-Setting used to switch between databases. In `sprint/config.php` there are two sets of database credentials which can be defined in case your website requires a database. This boolean allows you to quickly switch between the two sets of credentials.
+Setting used to switch between databases. In `sprint/db_config.php` there are two sets of database credentials which can be defined in case your website requires a database. This boolean allows you to quickly switch between the two sets of credentials.
 
 This can be useful if there are differences between your local and your production database.
 <br /><br />
@@ -175,7 +175,7 @@ This can be useful if there are differences between your local and your producti
 
 
 ## Database and Controller
-Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between two sets of database credentials by toggling `$use_production_db` (in `sprint/settings.php`) and configuring `sprint/config.php`.
+Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between two sets of database credentials by toggling `$use_production_db` (in `sprint/settings.php`) and configuring `sprint/db_config.php`.
 
 In general, I like to use a single controller to which I do all my posts. Sprint includes this controller and you can delete it if you want to, it's not a requirement.
 

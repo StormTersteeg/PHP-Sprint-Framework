@@ -1,6 +1,6 @@
 <?php
 
-function inc($link) {
+function import($link) {
     if ($GLOBALS['use_resource_stacking']==TRUE) {
         if (strpos($link, '.js') !== false) {
             echo "<script>" . file_get_contents($link) . "</script>";
