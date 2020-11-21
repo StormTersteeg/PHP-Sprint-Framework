@@ -1,5 +1,5 @@
 <?php
-$db = new SprintDB('test');
+$db = new SprintDB('');
 
 function fakeFunction() {
   echo "Controller configured properly, this text can be found in areas/controller/views/index.php on line 10";
@@ -28,10 +28,14 @@ function getNote($id) {
   $sql = "SELECT note_name, note_content FROM notes WHERE id = '$id'";
   $result = $db->fetch($sql);
 
-  // Retrieve data from $result
-  $note_name = $result['note_name'];
-  $note_content = $result['note_content'];
-  
-  // Echo retrieved data as json
-  echo json_encode(['note_name' => $note_name, 'note_content' => $note_content]);
+  if (!$result) {
+    echo "No notes with id $id";
+  } else {
+    // Retrieve data from $result
+    $note_name = $result['note_name'];
+    $note_content = $result['note_content'];
+    
+    // Echo retrieved data as json
+    echo json_encode(['note_name' => $note_name, 'note_content' => $note_content]);
+  }
 }

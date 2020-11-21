@@ -2,8 +2,8 @@
 
 // SETTINGS & FUNCTIONS
 include("sprint/settings.php");
-include("sprint/core/classes.php");
 include("sprint/core/functions.php");
+include("sprint/core/classes.php");
 
 // COLLECT PARAMETERS
 $page = (isset($_GET['page'])) ? $_GET['page'] : "index";
