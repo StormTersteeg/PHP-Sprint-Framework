@@ -185,7 +185,11 @@ This can be useful if there are differences between your local and your producti
 
 **$database_credentials**<br />
 > Type: Array<br />
-> Default value: array('local' => array('localhost', 'root', ''),'production' => array('localhost', 'root', ''))
+> Default value:
+    array(
+        'local' => array('localhost', 'root', ''),
+        'production' => array('localhost', 'root', '')
+    )
 
 Used to store all available database credential sets.
 <br /><br />
