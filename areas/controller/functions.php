@@ -1,5 +1,5 @@
 <?php
-$db = new SprintDB('');
+$db = new SprintDB('example_db');
 
 function fakeFunction() {
   echo "Controller configured properly, this text can be found in areas/controller/views/index.php on line 17";
