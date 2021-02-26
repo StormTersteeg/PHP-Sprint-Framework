@@ -18,10 +18,12 @@
   * Adding resources
   * Resource stacking
 * [Settings](#settings)
+  * $execution_mode
   * $resource_blacklist
   * $use_resource_stacking
   * $use_forced_https
-  * $use_production_db
+  * $database_model
+  * $database_credentials
 * [Database / Controller](#database-and-controller)
 * [Icons](#icons)
 * [License](#license)
