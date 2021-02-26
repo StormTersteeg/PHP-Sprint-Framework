@@ -164,7 +164,7 @@ The resource_blacklist is also useful if you have a specific page that doesn't r
 Resource stacking is a sprint feature that compiles all your resources together with your html, to lower the amount of requests being made. This feature generally improves load times. The idea is that making one big request is better than making tons of small requests. It can be enabled or disabled.
 
 **WARNING**
-Resource stacking can only be used when all your preload and afterload files are stored locally.
+Resource stacking can only be used when all your preload and afterload resources are stored locally.
 <br /><br />
 
 **$use_forced_https**<br />
