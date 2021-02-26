@@ -36,14 +36,14 @@ Why use Sprint when there are a lot of great frameworks that contain a lot of fe
 
 
 ### Features
-In short? Pretty urls, forced https, MVC layout, dual database, resource control, resource piling and more.
+In short? Pretty urls, forced https, MVC layout, database class, resource control, resource piling and more.
 
 **A little more in depth:**
 * Easy to use pretty url system
 	* `/about` instead of `/about.html`
 * Premade MVC folder layout
 * Forced `HTTPS` setting
-* Simple dual database setting
+* Simple database class
 	* To easily switch between production and deployment databases
 * Resource spreading feature
 	* Want to load a certain script at the end of the body on every page? easy.
@@ -59,8 +59,8 @@ In short? Pretty urls, forced https, MVC layout, dual database, resource control
 Sprint is packaged with a few resources that I consider to be useful. These resources are recommendations, and I often use them myself, they are not requirements. 
 
 * [Daemonite Material Design 4.1.1] (http://daemonite.github.io/material/docs/4.1/getting-started/introduction/)
-* [Google Material Icons V48] (https://material.io/resources/icons/?style=baseline)
-* [Jquery 3.4.1] (https://api.jquery.com/)
+* [Google Material Icons] (https://material.io/resources/icons/?style=baseline)
+* [Jquery 3.5.1] (https://api.jquery.com/)
 * [Bootstrap JS 4.1.1] (https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 * [Popper 1.14.3] (https://popper.js.org/docs/v1/)
 * [Roboto Font] (https://fonts.google.com/specimen/Roboto)
@@ -131,11 +131,22 @@ The import() function recognizes different types of files and it will generate t
 Resource stacking is a sprint feature that compiles all your resources together with your html, to lower the amount of requests made. This feature generally improves load times. The idea is that making one big request is better than making tons of small requests. It can be enabled/disabled in `sprint/settings.php`.
 
 **WARNING**
-Resource stacking can only be used when all your preload and afterload files are stored locally.
+Resource stacking can only be used when all your preload and afterload resources are stored locally.
 <br /><br />
 
 
 ## Settings
+
+**$execution_mode**<br />
+> Type: String<br />
+> Default value: 'strict'<br />
+> Possible values: 'quiet', 'oblivious', 'strict'
+
+Sprint uses a small set of internal functions, these funtions can display debug information:<br />
+- quiet: display no debug information<br />
+- oblivious: display debug information<br />
+- strict: display debug information, and exit; after encountering issues
+<br /><br />
 
 **$resource_blacklist**<br />
 > Type: Array<br />
@@ -153,7 +164,7 @@ The resource_blacklist is also useful if you have a specific page that doesn't r
 Resource stacking is a sprint feature that compiles all your resources together with your html, to lower the amount of requests being made. This feature generally improves load times. The idea is that making one big request is better than making tons of small requests. It can be enabled or disabled.
 
 **WARNING**
-Resource stacking can only be used when all your preload and afterload files are stored locally.
+Resource stacking can only be used when all your preload and afterload resources are stored locally.
 <br /><br />
 
 **$use_forced_https**<br />
@@ -163,19 +174,30 @@ Resource stacking can only be used when all your preload and afterload files are
 Bool used to force users to use HTTPS.
 <br /><br />
 
-**$use_production_db**<br />
-> Type: Bool<br />
-> Default value: FALSE
+**$database_model**<br />
+> Type: String (String by default)<br />
+> Default value: 'local'
 
-Setting used to switch between databases. In `sprint/db_config.php` there are two sets of database credentials which can be defined in case your website requires a database. This boolean allows you to quickly switch between the two sets of credentials.
+Setting used to switch between credential set. These sets are stored in `$database_credentials`.
 
 This can be useful if there are differences between your local and your production database.
+<br /><br />
+
+**$database_credentials**<br />
+> Type: Array<br />
+> Default value:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;array(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'local' => array('localhost', 'root', ''),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'production' => array('localhost', 'root', '')<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)
+
+Used to store all available database credential sets.
 <br /><br />
 
 
 
 ## Database and Controller
-Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between two sets of database credentials by toggling `$use_production_db` (in `sprint/settings.php`) and configuring `sprint/db_config.php`.
+Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between sets of database credentials by toggling `$database_model` (in `sprint/settings.php`).
 
 In general, I like to use a single controller to which I do all my posts. Sprint includes this controller and you can delete it if you want to, it's not a requirement.
 

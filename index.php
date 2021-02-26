@@ -3,6 +3,7 @@
 // SETTINGS & FUNCTIONS
 include("sprint/settings.php");
 include("sprint/core/functions.php");
+include("sprint/core/classes.php");
 
 // COLLECT PARAMETERS
 $page = (isset($_GET['page'])) ? $_GET['page'] : "index";
@@ -25,7 +26,7 @@ if ($serve_content)
   // OPEN DOCUMENT
   echo '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
   <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-  <!-- SPRINT3.2 -->
+  <!-- SPRINT3.4 -->
   <link rel="apple-touch-icon" href="assets/logo.png">';
 
   // INCLUDE PRELOAD
