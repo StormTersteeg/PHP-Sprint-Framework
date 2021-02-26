@@ -2,7 +2,7 @@
 $db = new SprintDB('');
 
 function fakeFunction() {
-  echo "Controller configured properly, this text can be found in areas/controller/views/index.php on line 10";
+  echo "Controller configured properly, this text can be found in areas/controller/views/index.php on line 17";
 }
 
 function addNote($note_name, $note_content) {
