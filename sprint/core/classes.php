@@ -24,4 +24,12 @@ class SprintDB {
     $result = mysqli_fetch_assoc(mysqli_query($this->link, $sql));
     return $result;
   }
+
+  function fetch_multiple($sql) {
+    $result = mysqli_query($this->link, $sql) or die(mysql_error());
+    $array = Array();
+    for($i = 0; $array[$i] = mysqli_fetch_assoc($result); $i++) ;
+    array_pop($array);
+    return $array;
+  }
 }
