@@ -72,7 +72,7 @@ Sprint is packaged with a few resources that I consider to be useful. These reso
 
 ## Getting Started
 
-To start, clone the project. Now give the folder a unique name, I'm going to be using `my_project` for example. Remove any unwanted files like `.git` and `README.md`.
+To start, download the project. Create a new directory, I'm going to be using `my_project` for examples.
 
 It is possible to add any resource to this project if you want to, I will explain this in the [resources](#resources) section.
 (For example charts.js or any front-end library)
