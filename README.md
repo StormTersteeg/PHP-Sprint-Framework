@@ -1,6 +1,6 @@
 ## SPRINT-V3
 
-<img src="https://one.dontdalon.com/assets/img/sprint_banner.png">
+<img src="http://one.dontdalon.com/assets/logo.png" height="300px">
 
 ## Table of Contents
 
