@@ -39,7 +39,7 @@ Why use Sprint when there are a lot of great frameworks that contain a lot of fe
 ### Apps written using Glide
 - [YouTube Radio](https://github.com/StormTersteeg/YouTube-Radio)
 - [Catsploshion](https://github.com/StormTersteeg/Catsploshion)
-
+<br />
 
 ### Features
 In short? Pretty urls, forced https, MVC layout, database class, resource control, resource piling and more.
