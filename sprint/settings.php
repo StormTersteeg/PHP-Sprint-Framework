@@ -1,5 +1,6 @@
 <?php
 // App settings
+$project_version = 1;
 $execution_mode = 'strict'; // quiet - oblivious - strict
 $resource_blacklist = ["controller"];
 $use_resource_stacking = TRUE;

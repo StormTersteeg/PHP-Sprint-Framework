@@ -33,9 +33,9 @@ function import($path) {
       }
     } else {
       if (strpos($path, '.js') !== false) {
-          echo '<script src="' . $path . '"></script>';
+          echo '<script src="' . $path . '?v=' . $GLOBALS['project_version'] . '"></script>';
       } else if (strpos($path, '.css') !== false) {
-          echo '<link rel="stylesheet" type="text/css" href="' . $path . '">';
+          echo '<link rel="stylesheet" type="text/css" href="' . $path . '?v=' . $GLOBALS['project_version'] . '">';
       } else if (strpos($path, '.php') !== false) {
           include($path);
       }
