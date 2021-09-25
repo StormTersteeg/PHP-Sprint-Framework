@@ -139,6 +139,13 @@ Resource stacking can only be used when all your preload and afterload resources
 
 ## Settings
 
+**$project_version**<br />
+> Type: Int<br />
+> Default value: 1<br />
+
+Used to update client-side cached resources. Changing this value will also change all the resource urls, causing a forced recache.
+<br /><br />
+
 **$execution_mode**<br />
 > Type: String<br />
 > Default value: 'strict'<br />
