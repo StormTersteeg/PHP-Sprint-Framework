@@ -36,7 +36,7 @@ Sprint is a project I made to be able to pass my web development exams without h
 Why use Sprint when there are a lot of great frameworks that contain a lot of features? Sprint doesn't do a lot of things, unlike wordpress or laravel for example. But it's very quick and it's easy to modify. Using a framework like wordpress to create a website always makes me feel like I'm using sledgehammer to crack a nut.
 <br />
 
-### Apps written using Glide
+### Apps written using Sprint
 - [YouTube Radio](https://github.com/StormTersteeg/YouTube-Radio)
 - [Catsploshion](https://github.com/StormTersteeg/Catsploshion)
 <br />
