@@ -5,6 +5,8 @@ $execution_mode = 'strict'; // quiet - oblivious - strict
 $resource_blacklist = ["controller"];
 $use_resource_stacking = TRUE;
 $use_forced_https = FALSE;
+$use_rate_limit = FALSE;
+$rate_limit = 4;
 
 // Database settings
 $database_model = 'local';

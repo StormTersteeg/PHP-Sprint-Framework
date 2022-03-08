@@ -2,6 +2,7 @@
 
 // SETTINGS & FUNCTIONS
 include("sprint/settings.php");
+if ($use_rate_limit) {include("sprint/plugins/rate-limit.php");}
 include("sprint/core/functions.php");
 include("sprint/core/classes.php");
 
