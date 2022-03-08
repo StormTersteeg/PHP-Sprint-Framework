@@ -37,7 +37,7 @@ Why use Sprint when there are a lot of great frameworks that contain a lot of fe
 <br />
 
 ### Apps written using Sprint
-- [Netbank](https://github.com/StormTersteeg/Netbank) <sub><sup>[Demo](https://netbank.dontdalon.com)</sup></sub>
+- Netbank <sub><sup>[Demo](https://netbank.dontdalon.com)</sup></sub>
 - [YouTube Radio](https://github.com/StormTersteeg/YouTube-Radio) <sub><sup>[Demo](https://radio.dontdalon.com)</sup></sub>
 - [Catsploshion](https://github.com/StormTersteeg/Catsploshion) <sub><sup>[Demo](https://cats.dontdalon.com)</sup></sub>
 <br />
