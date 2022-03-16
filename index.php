@@ -27,7 +27,7 @@ if ($serve_content)
   // OPEN DOCUMENT
   echo '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
   <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-  <!-- SPRINT3.5 -->
+  <!-- SPRINT 3.6 -->
   <link rel="apple-touch-icon" href="assets/logo.png">';
 
   // INCLUDE PRELOAD
