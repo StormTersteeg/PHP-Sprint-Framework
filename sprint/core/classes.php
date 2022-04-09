@@ -16,7 +16,11 @@ class SprintDB {
   }
 
   function query($sql) {
-    $result = mysqli_query($this->link, $sql);
+    mysqli_query($this->link, $sql);
+  }
+
+  function query_multiple($sql) {
+    mysqli_multi_query($this->link, $sql);
   }
 
   function fetch($sql) {
