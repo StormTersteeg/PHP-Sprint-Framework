@@ -1,30 +1,29 @@
 <?php
-$db = new SprintDB('example_db');
 
 function fakeFunction() {
   echo "Controller configured properly, this text can be found in areas/controller/views/index.php on line 17";
 }
 
 function addNote($note_name, $note_content) {
-  global $db;
+  $db = new SprintDB('example_db');
   $sql = "INSERT INTO notes (note_name, note_content) VALUES ('$note_name', '$note_content')";
   $db->query($sql);
 }
 
 function updateNote($id, $note_name, $note_content) {
-  global $db;
+  $db = new SprintDB('example_db');
   $sql = "UPDATE notes SET note_name = '$note_name', note_content = '$note_content' WHERE id = '$id'";
   $db->query($sql);
 }
 
 function deleteNote($id) {
-  global $db;
+  $db = new SprintDB('example_db');
   $sql = "DELETE FROM notes WHERE id = '$id'";
   $db->query($sql);
 }
 
 function getNote($id) {
-  global $db;
+  $db = new SprintDB('example_db');
   $sql = "SELECT note_name, note_content FROM notes WHERE id = '$id'";
   $result = $db->fetch($sql);
 

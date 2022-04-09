@@ -13,6 +13,10 @@
         <div class="card-body">
             <h5>Try the default controller by posting this form.</h5>
             <button type="submit" class="btn btn-primary" onclick="getTest()">Submit</button>
+            <hr class="my-4">
+            <h5>Click here to view the $page / $sub_page example</h5>
+            <a href="product/foo">Product: foo</a><br>
+            <a href="product/bar">Product: bar</a>
         </div>
     </div>
 </div>
