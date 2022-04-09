@@ -1,17 +1,19 @@
 <?php session_start();
 
-// SETTINGS & FUNCTIONS
+// SETTINGS & CORE
 include("sprint/settings.php");
-if ($use_rate_limit) {include("sprint/plugins/rate-limit.php");}
+include("sprint/services.php");
 include("sprint/core/functions.php");
 include("sprint/core/classes.php");
 
 // COLLECT PARAMETERS
 $page = (isset($_GET['page'])) ? $_GET['page'] : "index";
-$param = (isset($_GET['param'])) ? $_GET['param'] : false;
-$serve_content = (!in_array($page, $resource_blacklist)) ? true : false;
+$sub_page = (isset($_GET['sub_page'])) ? $_GET['sub_page'] : false;
 
-if ($serve_content)
+// SERVE RESOURCES IF $page IS NOT PRESENT IN THE RESOURCE BLACKLIST
+$serve_resources = (!in_array($page, $resource_blacklist)) ? true : false;
+
+if ($serve_resources)
 {
   // FORCE HTTPS
   if($use_forced_https) {
@@ -25,24 +27,17 @@ if ($serve_content)
   }
 
   // OPEN DOCUMENT
-  echo '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-  <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-  <!-- SPRINT 3.6 -->
-  <link rel="apple-touch-icon" href="assets/logo.png">';
+  echo '
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+      <!-- SPRINT 3.7 -->
+  ';
 
   // INCLUDE PRELOAD
   include("sprint/resource-preload.php");
-
-  // INCLUDE PARTIALS
-  if ($page=='home') {
-    // include("sprint/partials/navbar.php");
-  } else if ($page=='admin') {
-    if (isset($_SESSION["loggedin"])) {
-      // include("sprint/partials/admin_navbar.php");
-    } else {
-      // $page = '404';
-    }
-  }
 }
 
 // SERVE VIEW
@@ -59,14 +54,17 @@ else
   include("areas/404/index.php");
 }
 
-if ($serve_content)
+if ($serve_resources)
 {
   // INCLUDE AFTERLOAD
   echo "<project-scripts>";
   include("sprint/resource-afterload.php");
   echo "</project-scripts>";
 
-  // ADD PRODUCT ICON
-  echo '<link rel="icon" type="image/png" href="assets/favicon.png"/>';
+  // ADD PRODUCT ICONS
+  echo '
+    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="apple-touch-icon" href="assets/icon.png">
+  ';
 }
 ?>
