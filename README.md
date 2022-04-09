@@ -22,8 +22,6 @@
   * $resource_blacklist
   * $use_resource_stacking
   * $use_forced_https
-  * $use_rate_limit
-  * $rate_limit
   * $database_model
   * $database_credentials
 * [Database / Controller](#database-and-controller)
@@ -188,20 +186,6 @@ Resource stacking can only be used when all your preload and afterload resources
 > Default value: FALSE
 
 Bool used to force users to use HTTPS.
-<br /><br />
-
-**$use_rate_limit**<br />
-> Type: Bool<br />
-> Default value: FALSE
-
-Bool used to enable the rate-limit plugin, limits the amount of request a client can send per second.
-<br /><br />
-
-**$rate_limit**<br />
-> Type: Int<br />
-> Default value: 4
-
-Indicates the maximum amount of requests a client can send per second.
 <br /><br />
 
 **$database_model**<br />
