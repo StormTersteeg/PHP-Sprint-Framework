@@ -1,4 +1,8 @@
-<title>Product</title>
+<?php
+$site_name .= " - products";
+$page_description = "All my sprint demo products!";
+?>
+
 <div style="display:flex;justify-content:center;align-items:center;height:100%;">
     <div class="card">
         <div class="card-body">

@@ -1,4 +1,8 @@
-<title>Home</title>
+<?php
+$site_name .= " - home";
+$page_description = "This is my sprint index!";
+?>
+
 <div style="display:flex;justify-content:center;align-items:center;height:100%;">
     <div class="card">
         <div class="card-body">

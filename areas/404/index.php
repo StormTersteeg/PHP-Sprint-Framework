@@ -1,4 +1,8 @@
-<title>404</title>
+<?php
+$site_name .= " - 404";
+$page_description = "This page doesn't exist.";
+?>
+
 <div style="display:flex;justify-content:center;align-items:center;height:90%">
    <div class="card">
       <div class="card-body">

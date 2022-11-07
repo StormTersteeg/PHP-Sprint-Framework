@@ -33,7 +33,7 @@ if ($serve_resources)
     <head>
       <meta charset="utf-8">
       <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-      <!-- SPRINT 3.7 -->
+      <!-- SPRINT 3.8 -->
   ';
 
   // INCLUDE PRELOAD
@@ -61,10 +61,18 @@ if ($serve_resources)
   include("sprint/resource-afterload.php");
   echo "</project-scripts>";
 
-  // ADD PRODUCT ICONS
+  // SERVE META MATERIAL
   echo '
     <link rel="icon" type="image/png" href="assets/favicon.png"/>
     <link rel="apple-touch-icon" href="assets/icon.png">
+    <title>' . $site_name . '</title>
+    <meta property="og:title" content="' . $site_name . '" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="' . "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" . '" />
+    <meta property="og:image" content="' . $site_icon . '" />
+    <meta property="og:description" content="' . $page_description . '" />
+    <meta name="theme-color" content="' . $site_color . '">
+    <meta name="twitter:card" content="summary_large_image">
   ';
 }
 ?>
