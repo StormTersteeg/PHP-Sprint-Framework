@@ -24,6 +24,7 @@
   * $use_forced_https
   * $database_model
   * $database_credentials
+* [Services](#services)
 * [Database / Controller](#database-and-controller)
 * [Icons](#icons)
 * [License](#license)
@@ -209,6 +210,24 @@ Used to store all available database credential sets.
 <br /><br />
 
 
+
+## Services
+`sprint/services.php` is a file used to load "services". Services are snippets of code used to trigger specific behaviours. Services are loaded for every [view](#creating-pages), but specific load behaviour can also be set.
+
+Example `services.php`
+```
+<?php
+
+include("sprint/services/rate-limit.php");
+
+if (isset($_GET['page']) && $_GET['page']=='some_page') {
+    include("sprint/services/some_other_service.php");
+}
+```
+
+Services are to be stored in `sprint/services/`, an example service can be seen [here](https://github.com/StormTersteeg/PHP-Sprint-Framework/blob/master/sprint/services/rate-limit.php).
+
+<br /><br />
 
 ## Database and Controller
 Sprint does not require a database to function, but it does contain a set of useful examples. As explained in the [settings](#settings) section, you can switch between sets of database credentials by toggling `$database_model` (in `sprint/settings.php`).
