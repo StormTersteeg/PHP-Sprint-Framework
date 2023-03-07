@@ -30,6 +30,8 @@ function import($path) {
           echo "<style>" . file_get_contents($path) . "</style>";
       } else if (strpos($path, '.php') !== false) {
           include($path);
+      } else if (strpos($path, '.png') !== false || strpos($path, '.jpg') !== false || strpos($path, '.jpeg') !== false || strpos($path, '.gif') !== false) {
+          echo '<link rel="prefetch" href="' . $path . '" />';
       }
     } else {
       if (strpos($path, '.js') !== false) {
@@ -38,6 +40,8 @@ function import($path) {
           echo '<link rel="stylesheet" type="text/css" href="' . $path . '?v=' . $GLOBALS['project_version'] . '">';
       } else if (strpos($path, '.php') !== false) {
           include($path);
+      } else if (strpos($path, '.png') !== false || strpos($path, '.jpg') !== false || strpos($path, '.jpeg') !== false || strpos($path, '.gif') !== false) {
+          echo '<link rel="prefetch" href="' . $path . '" />';
       }
     }
   } else {
